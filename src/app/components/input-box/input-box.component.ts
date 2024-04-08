@@ -16,4 +16,16 @@ export class InputBoxComponent {
     const value = (event.target as HTMLInputElement).value
     this.userInput = value
   }
+
+  onButtonClick(event: Event) {
+    if (this.userInput.length !== 0) {
+      if (this.userInput.length % 2 !== 0) {
+        //Na mpei se lista aristera
+      } else {
+        //Na mpei deksia
+      }
+       
+    } 
+    
+  }
 }

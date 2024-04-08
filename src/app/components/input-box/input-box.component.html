@@ -1,7 +1,7 @@
 <div>
     <input type="text" placeholder="Type something!"
     (input)="onUserInput($event)" />
-    <button class="btn btn-primary btn-sm"></button>
+    <button class="btn btn-primary btn-sm" (click)="onButtonClick($event)">Submit</button>
   </div>
    @if (userInput.length === 0) {
     No Input Detected!
