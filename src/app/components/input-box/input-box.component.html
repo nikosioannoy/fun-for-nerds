@@ -1,0 +1,12 @@
+<div>
+    <input type="text" placeholder="Type something!"
+    (input)="onUserInput($event)" />
+    <button class="btn btn-primary btn-sm"></button>
+  </div>
+   @if (userInput.length === 0) {
+    No Input Detected!
+   } @else if (userInput.length % 2 === 0 ) {
+    Length is even
+   } @else {
+    Length is odd
+   }
