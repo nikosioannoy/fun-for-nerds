@@ -1,1 +1,7 @@
-<p>word-list works!</p>
+<div class="d-block ">
+    <span class="text-danger">{{userInput}}</span>
+
+    @for (word of oddWordsList; track word) {
+        {{word}} <br>
+    }
+</div>

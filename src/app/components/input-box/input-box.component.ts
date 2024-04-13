@@ -1,31 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { WordListComponent } from '../word-list/word-list.component';
+import { WordListEvenComponent } from '../word-list-even/word-list-even.component';
 
 @Component({
   selector: 'app-input-box',
   standalone: true,
-  imports: [],
+  imports: [WordListComponent, WordListEvenComponent],
   templateUrl: './input-box.component.html',
   styleUrl: './input-box.component.css'
 })
 export class InputBoxComponent {
-  letterNumber: number = 0
+  currentWord: string = ''
+  currentOddWordParent = ''
+  currentEvenWordParent = ''
+  oddWordsParent: string[] = []
+  evenWordsParent: string[] = []
 
-  userInput: string = ''
 
   onUserInput(event: Event) {
     const value = (event.target as HTMLInputElement).value
-    this.userInput = value
+    this.currentWord = value
+    if (this.currentWord.length % 2 !== 0) {
+      this.currentOddWordParent = this.currentWord
+      this.currentEvenWordParent = ''
+    } else {
+      this.currentOddWordParent = ''
+      this.currentEvenWordParent = this.currentWord
+    }
   }
 
-  onButtonClick(event: Event) {
-    if (this.userInput.length !== 0) {
-      if (this.userInput.length % 2 !== 0) {
-        //Na mpei se lista aristera
-      } else {
-        //Na mpei deksia
-      }
-       
-    } 
-    
+  onSubmit() {
+    console.log(this.currentWord)
+    if (this.currentWord.length % 2 !== 0) {
+      this.oddWordsParent.push(this.currentWord)
+    } else {
+      this.evenWordsParent.push(this.currentWord)
+    }
   }
+
 }

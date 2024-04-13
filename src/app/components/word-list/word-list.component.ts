@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { InputBoxComponent } from '../input-box/input-box.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-word-list',
@@ -9,7 +10,10 @@ import { InputBoxComponent } from '../input-box/input-box.component';
   styleUrl: './word-list.component.css'
 })
 export class WordListComponent {
-  if (userInput) {
-    
-  }
+  @Input() oddWordsList: string[];
+  @Input() userInput: string = '';
+
+
+  
+  
 }
