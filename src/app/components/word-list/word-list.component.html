@@ -1,7 +1,10 @@
-<div class="d-block ">
-    <span class="text-danger">{{userInput}}</span>
-
-    @for (word of oddWordsList; track word) {
-        {{word}} <br>
-    }
+<div class="">
+    <span class="text-danger">{{userInput}}</span> <br>
+    @if (oddWordsList.length === 0) {
+        <p>No odd length words</p>
+    } @else {
+        @for (word of oddWordsList; track word) {
+            {{word}} <br>
+        }
+    }    
 </div>

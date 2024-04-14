@@ -1,8 +1,12 @@
-<div class="d-block ">
-    <div class="d-block ">
-        <span class="text-danger">{{userInput}}</span>
+<div class="">
+    <div class="">
+        <span class="text-danger">{{userInput}}</span> <br />
     </div>
-    @for (word of evenWordsList; track word) {
-        {{word}} <br>
-    }
+    @if (evenWordsList.length === 0) {
+        <p>No even length words</p>
+    } @else {
+        @for (word of evenWordsList; track word) {
+            {{word}} <br>
+        }
+    }    
 </div>

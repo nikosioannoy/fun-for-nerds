@@ -31,11 +31,13 @@ export class InputBoxComponent {
 
   onSubmit() {
     console.log(this.currentWord)
-    if (this.currentWord.length % 2 !== 0) {
-      this.oddWordsParent.push(this.currentWord)
-    } else {
-      this.evenWordsParent.push(this.currentWord)
-    }
+    if (this.currentWord.length > 0) {
+      if (this.currentWord.length % 2 !== 0) {
+        this.oddWordsParent.push(this.currentWord)
+      } else {
+        this.evenWordsParent.push(this.currentWord)
+      }
+    }  
   }
 
 }

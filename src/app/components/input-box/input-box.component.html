@@ -1,11 +1,13 @@
-<div class="container-lg ">
+<div class="container mt-5  ">
+  <div class="d-flex flex-column gap-2 ">
     <input type="text" placeholder="Type something!"
     (input)="onUserInput($event)" />
     <button class="btn btn-primary btn-sm" (click)="onSubmit()">Submit</button>
+    <div class="d-flex justify-content-between gap-2">
+      <app-word-list [oddWordsList]="oddWordsParent" [userInput]="currentOddWordParent"></app-word-list>
+      <!-- <p>||</p> -->
+      <app-word-list-even [evenWordsList]="evenWordsParent" [userInput]="currentEvenWordParent"></app-word-list-even>
+    </div>  
   </div>
-  <div class="d-flex gap-2 w-100">
-    <app-word-list [oddWordsList]="oddWordsParent" [userInput]="currentOddWordParent"></app-word-list>
-    <p>||</p>
-    <app-word-list-even [evenWordsList]="evenWordsParent" [userInput]="currentEvenWordParent"></app-word-list-even>
 </div>
    
